@@ -1,0 +1,6 @@
+@AFP_Backend_HostAddress = http://localhost:5072
+
+GET {{AFP_Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
