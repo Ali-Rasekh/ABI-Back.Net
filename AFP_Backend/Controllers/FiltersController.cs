@@ -15,15 +15,13 @@ namespace ABI_Back.Controllers
     public class FiltersController : MyBaseController
     {
         private readonly MaroonContext _MaroonDbContext;
+        private readonly IMapper _Mapper;
 
-        public FiltersController(MaroonContext maroonDbContext)
+        public FiltersController(MaroonContext maroonDbContext, IMapper mapper)
         {
             _MaroonDbContext = maroonDbContext;
+            _Mapper = mapper;
         }
-
-        // private readonly IMapper _Mapper;
-
-
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BiFilter>>> GetFilters()
@@ -39,7 +37,7 @@ namespace ABI_Back.Controllers
             {
                 await transaction.RollbackAsync();
             }
-           // var result = _Mapper.Map<IEnumerable<BiFilterDto>>(filters);
+           //var result = _Mapper.Map<IEnumerable<BiFilterDto>>(filters);
             string json = JsonConvert.SerializeObject(filters);
 
             return Ok(json);
