@@ -23,9 +23,8 @@ namespace AFP_Backend.Modules.BiFilters.Controllers
             _filterRepository = filterRepository;
         }
 
-        [HttpGet("getfilters")]
-
-        public async Task<ActionResult<IEnumerable<BiFilter>>> GetFilters()
+        [HttpGet("GetFiltersList")]
+        public async Task<ActionResult<IEnumerable<BiFilter>>> GetFiltersList()
         {
             var filters = await _filterRepository.GetAllAsync();
             if (filters == null)
@@ -36,7 +35,7 @@ namespace AFP_Backend.Modules.BiFilters.Controllers
             string json = JsonConvert.SerializeObject(filters);
             return Ok(json);
         }
-        [HttpGet]
+        [HttpGet("GetFilter")]
         public async Task<IActionResult> GetFilter(int id)
         {
             var filter = await _filterRepository.GetAsync(id);
