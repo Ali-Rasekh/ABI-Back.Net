@@ -19,7 +19,6 @@ namespace AFP_Backend.Modules.BiFilters.Controllers
 
         public FiltersController(IMapper mapper, IBiFilterRepository filterRepository)
         {
-
             _Mapper = mapper;
             _filterRepository = filterRepository;
         }
@@ -28,7 +27,7 @@ namespace AFP_Backend.Modules.BiFilters.Controllers
 
         public async Task<ActionResult<IEnumerable<BiFilter>>> GetFilters()
         {
-            var filters = _filterRepository.GetAll();
+            var filters = await _filterRepository.GetAll();
             if (filters == null)
             {
                 return NotFound();
