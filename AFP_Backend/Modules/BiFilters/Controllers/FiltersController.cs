@@ -27,7 +27,7 @@ namespace AFP_Backend.Modules.BiFilters.Controllers
 
         public async Task<ActionResult<IEnumerable<BiFilter>>> GetFilters()
         {
-            var filters = await _filterRepository.GetAll();
+            var filters = await _filterRepository.GetAllAsync();
             if (filters == null)
             {
                 return NotFound();
@@ -39,7 +39,7 @@ namespace AFP_Backend.Modules.BiFilters.Controllers
         [HttpGet]
         public async Task<IActionResult> GetFilter(int id)
         {
-            var filter = await _filterRepository.Get(id);
+            var filter = await _filterRepository.GetAsync(id);
             if (filter == null)
             {
                 return NotFound();
