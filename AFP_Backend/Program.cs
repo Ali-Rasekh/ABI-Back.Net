@@ -1,7 +1,8 @@
-using AFP_Backend.MappingProfile;
-using Context.MaroonContext;
-using Microsoft.Extensions.DependencyInjection;
-using AutoMapper;
+﻿using AFP_Backend.Contexts;
+using AFP_Backend.Modules.BiFilters.Contracts.IRepository;
+using AFP_Backend.Modules.BiFilters.Repository;
+using AFP_Backend.Modules.Public.Contracts.IRepository;
+using AFP_Backend.Modules.Public.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,10 +13,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-
-
+//builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly); فقط پروفایل مورد نظر رو میاره
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // این میره همه پروفایل ها رو میاره
 builder.Services.AddDbContext<MaroonContext>();
+builder.Services.AddScoped<IBiFilterRepository, BiFiltersRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 

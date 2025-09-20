@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MaroonModels;
+﻿namespace AFP_Backend.Modules.BiFilters.Models;
 
 public partial class BiFilter
 {

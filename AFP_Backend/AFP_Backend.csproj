@@ -26,7 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contract\IRepository\" />
+    <Folder Include="Modules\BiFilters\Enums\" />
+    <Folder Include="Modules\Public\Mapper\" />
+    <Folder Include="Modules\Public\Models\" />
   </ItemGroup>
 
 </Project>

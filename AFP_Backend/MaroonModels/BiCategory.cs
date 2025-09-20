@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MaroonModels;
+﻿namespace AFP_Backend.MaroonModels;
 
 public partial class BiCategory
 {

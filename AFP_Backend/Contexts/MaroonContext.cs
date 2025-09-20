@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using MaroonModels;
+﻿using AFP_Backend.MaroonModels;
+using AFP_Backend.Modules.BiFilters.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Context.MaroonContext;
+namespace AFP_Backend.Contexts;
 
 public partial class MaroonContext : DbContext
 {

@@ -1,8 +1,6 @@
-﻿using AFP_Backend.Contract.Dtos;
-using System;
-using System.Collections.Generic;
+﻿using AFP_Backend.Modules.Public.Contracts.Dtos;
 
-namespace Contract.Dtos.MaroonModels;
+namespace AFP_Backend.Modules.BiFilters.Contracts.Dtos;
 
 public class BiFilterDto : BaseDto
 {
